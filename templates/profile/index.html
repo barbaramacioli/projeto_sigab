@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}SIGAB{% endblock %}
+
+{% block content %}
+    <head>
+        <title>Perfil do Usuário</title>
+    </head>
+    <body>
+        {% if user %}
+            <div class="mb-3">
+                <fieldset disabled="">
+                    <label class="form-label" for="disabledInput">Nome</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ user.nome_completo }}" disabled="">
+                </fieldset>
+            </div>
+            <div class="mb-3">
+                <fieldset disabled="">
+                    <label class="form-label" for="disabledInput">Username</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ user.username }}" disabled="">
+                </fieldset>
+            </div>
+            <div class="mb-3">
+                <fieldset disabled="">
+                    <label class="form-label" for="disabledInput">E-mail</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ user.email }}" disabled="">
+                </fieldset>
+            </div>
+            <div class="mb-3">
+                <fieldset disabled="">
+                    <label class="form-label" for="disabledInput">Bio</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ user.bio }}" disabled="">
+                </fieldset>
+            </div>
+        {% else %}
+            <p>Usuário não encontrado!</p>
+        {% endif %}
+
+    </body>
+{% endblock %}
